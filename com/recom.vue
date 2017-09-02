@@ -42,7 +42,7 @@
             	
             </div>
         </div>
-        <p><a href="javascript:;">热门歌单2222222</a></p>
+        <p><a href="javascript:;">热门歌单</a></p>
         <p><a href="javascript:;">去客户端发现更多好音乐 &gt;</a></p>
         <p><a href="javascript:;">查看电脑版网页</a></p>
         <div class="logo-footer">
