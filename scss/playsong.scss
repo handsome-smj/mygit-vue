@@ -1,0 +1,366 @@
+@import "./main.scss";
+
+
+// 布局应该适应各种机型的手机  不然写出来就是废 多使用弹性盒 百分比布局 还有 rem布局（这个貌似不会）
+.playContent{
+    width: 100%;
+    height: 100%;
+    
+    position: relative;
+    
+    overflow: hidden;
+    .playlist{
+        
+        width: 100%;
+        height: 380px;
+        background: rgba(0,0,0,1);
+        
+        position: absolute;
+        left: 0;
+        
+        bottom: -380px;
+        
+       
+        
+        transition: all .5s;
+        
+//      transform: translateY(-380px);
+
+        
+
+         
+        @include flex-center;
+        
+        .menu_top{
+            width: 100%;
+            height: 54px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        
+        .menu_middle{
+            width: 100%;
+            flex: 1;
+            
+            overflow: auto;
+            &::-webkit-scrollbar {display: none;} 
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        .menu_bottom{
+            width: 100%;
+            height: 54px;
+            border-top: 1px solid #fff;
+            
+            text-align: center;
+            line-height: 54px;
+            color: #fff;
+        }
+        
+        
+        
+    }
+    
+    
+    
+     .filterimg{
+        
+         width: 100%;
+         height: 100%;
+         
+         position: absolute;
+         left: 0;
+         top: 0;
+         z-index: -1;
+         filter: blur(20px);
+         
+         
+         
+         
+     }
+     
+    
+    
+    @include flex-center;
+    .playheader{
+        width: 100%;
+        height: 110px;
+        background: rgba(0,0,0,.1);
+        
+        padding: 15px 80px 15px 15px;
+        
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-direction: row;
+        
+        position: relative;
+        
+        
+        span{
+            display: block;
+            
+            width: 80px;
+            //height: 80px; // 图片插入进来时是原有大小   把高度去掉看看图片会不会变小？ 答案就是不写高度 图片也会变小
+            margin-right: 15px;
+            color: #fff;
+            img{
+                width: 100%;
+                height: 100%;
+                
+            }
+            
+            
+        }
+        .song_info{
+            
+            flex: 1;
+            
+            
+            
+            p{
+                line-height: 30px;
+                
+                
+                &:nth-of-type(1){
+                    margin-top: 20px;
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+        .playBtn{  // 这里其实应该是：边框是个圆的   然后有个背景图 每点击背景图位移  背景图中 有 播放 和 暂停 俩个图
+            width: 43px;
+            height: 43px;
+            
+            line-height: 43px;
+            text-align: center;
+            font-size: 40px;
+            
+            
+            position: absolute;
+            right: 15px;
+            bottom: 30px;
+            
+            color: #fff;
+            
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+                    -webkit-user-select: none;
+                    -moz-user-focus: none;
+                    -moz-user-select: none;
+            
+       
+            
+            
+        }
+    }
+    
+    .playmiddle{
+        
+        width: 100%;
+        flex: 1;
+         
+         position: relative;
+         
+        overflow: auto;
+        
+       
+        
+         &::-webkit-scrollbar {display: none;} // 这样的写法的兼容性貌似不是很好
+         
+         
+         
+         
+         .lyric{
+             width: 100%;
+            position: absolute;
+            
+            left: 0;
+            top: 0;
+             
+             
+             
+             p{
+                 width: 100%;
+                 height: 42px;
+                 line-height: 42px;
+                 text-align: center;
+                 color: #fff;
+             }
+         }
+         
+    }
+    
+    
+    .playfooter{
+        
+        width: 100%;
+        height: 154px;
+        background: rgba(0,0,0,.1);
+        
+        
+        audio{
+            width: 100%;
+            height: 40%;
+            margin-top: 40px;
+            
+            
+        }
+        
+        .songcontrol{
+            
+            width: 100%;
+            height: 90px;
+            
+            margin-bottom: 10px;
+            
+            .top{
+                
+                width: 100%;
+                height: 40px;
+                margin-bottom: 10px;
+                
+               
+                
+                
+                span{
+                    width: 25px;
+                    height: 25px;
+                    
+                    margin-top:8px;
+                    line-height: 25px;
+                    color: #fff;
+                    font-size: 25px;
+                    text-align: center;
+                    
+                    
+                    &:nth-of-type(1){
+                        float: left;
+                        margin-left: 20px;
+                        
+                    }
+                    &:nth-of-type(2){
+                        float: right;
+                        margin-right: 20px;
+                        
+                    }
+                }
+                
+            }
+            
+            .bottom{
+                width: 100%;
+                height: 40px;
+                
+                .bottom_left{
+                    
+                    width: 10%;
+                    
+                    float: left;
+                    height: 40px;
+                    
+                    margin-left: 2%;
+                    
+                     text-align: center;
+                    line-height: 40px;
+                    color: #fff;
+                    
+                }
+                
+                .bottom_middle{
+                    width: 70%;
+                    height: 40px;
+                    
+                   
+                    
+                    float: left;
+                    
+                    margin: 0 3%;
+                    
+                    .later{
+                        width: 100%;
+                        height: 1px;
+                        background: #fff;
+                        
+                        margin-top: 20px;
+                        
+                        .before{
+                            width: 0;
+                            height: 1px;
+                            background: #31C27C;
+                        }
+                    }
+                    
+                }
+                
+                .bottom_right{
+                    width: 10%;
+                    height: 40px;
+                    
+                    color: #fff;
+                    float: left;
+                    margin-right: 2%;
+                    
+                    text-align: center;
+                    line-height: 40px;
+                    
+                    
+                }
+                
+                
+            }
+            
+        }
+        
+        .downloadsong{
+            
+            width: 70%;
+            height: 40px;
+            margin-left: 15%;
+            background: #31C27C;
+            padding: 0 55px;
+            box-sizing: border-box;
+            
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            
+            font-size: 20px;
+            
+           border-radius: 30px;
+           
+           position: relative;
+           
+           .downloadimg{
+               width: 32px;
+               height: 32px;
+              
+               
+               position: absolute;
+               top:4px ;
+               left: 15px;
+               
+                  background-image: url("//y.gtimg.cn/mediastyle/mobile/app/share/img/sprite_play.png?max_age=2592000&d=20151203183007");
+                    background-repeat: no-repeat;
+                    background-size: 40px 350px;
+                   background-position: 0 -300px;
+               
+               
+               
+           }
+            
+            
+        }
+        
+      
+    }
+}
