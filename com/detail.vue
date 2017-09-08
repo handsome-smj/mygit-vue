@@ -9,7 +9,7 @@
             </div>
         </div>
         <ul class="toplist" ref="ulbg">
-            <li v-for="(item,index) in topList" v-on:click="play(item.data.songmid,item.data.albummid,item.data.songid)">
+            <li v-for="(item,index) in topList" v-on:click="play(item.data.songmid,item.data.albummid,item.data.songid,item.data.songname)">
                 <span class="ordernum" >{{index+1}}</span>
                 <div class="toplist_left">
                     <p>{{item.data.songname}}</p>
@@ -132,12 +132,15 @@
             
         },
         methods:{
-            play(songmid,imgid,songid){
-                console.log(songid);
+            play(songmid,imgid,songid,songname){
+//              console.log(songid);
+
+
+                console.log(songname);
                 
                 var that  = this;
                 
-                 router.push({ path: 'playsong', query: { songmId: songmid , imgId:imgid, songId:songid , menuid:that.menuid}});
+                 router.push({ path: 'playsong', query: { songmId: songmid , imgId:imgid, songId:songid , menuid:that.menuid, songname:songname}});
                 
                 
                 

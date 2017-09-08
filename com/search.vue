@@ -53,7 +53,7 @@
                 
             </div>
             <ul>
-            	<li v-for="item in searchList" @click="toplay(item.songmid,item.albummid)">
+            	<li v-for="item in searchList" @click="toplay(item.songmid,item.albummid,item.songid,item.songname)">
             	    <div class="down_left iconfont">
             	        &#xe621;
             	    </div>
@@ -237,9 +237,9 @@
             
             
         },
-        toplay(songmid,imgid){
+        toplay(songmid,imgid,songid,songname){
             
-            router.push({ path: 'playsong', query: { songmId: songmid , imgId:imgid , sign:"1"}});
+            router.push({ path: 'playsong', query: { songmId: songmid , imgId:imgid , sign:"1",songId:songid,songname:songname}});
             
             
         },

@@ -20,7 +20,7 @@ export default {
 		  successCallback(data)
 		}).catch(function(e) {
 			//失败
-		  failCallBack(e)
+		  failCallBack(e);
 		});
 	},
 	fetchJsonp(url,successCallback,failCallBack){
@@ -31,7 +31,7 @@ export default {
 		  successCallback(data)
 		}).catch(function(e) {
 			//失败
-		  failCallBack(e)
+		  failCallBack(e);
 		});
 	},
 	vueJson(url,successCallback,failCallBack){

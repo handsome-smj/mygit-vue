@@ -10,6 +10,9 @@ import detail from "./../com/detail.vue";
 import playsong from "./../com/playsong.vue";
 
 
+//import publicheader from "./../com/publicheader.vue";
+
+
 //import header from "./../com/header.vue";
 
 
@@ -47,12 +50,14 @@ const routes = [
 	
 	{path:"/recom",components:{
     
-        default:recom
+        default:recom,
+        
         
     }}, 
   {path:"/toplist",components:{
     
     default:toplist
+    
   }}, 
   {path:"/search",components:{
     
